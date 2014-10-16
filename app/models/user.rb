@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	extend FriendlyId
+  mount_uploader :avatar, AvatarUploader
 	friendly_id :username
 
   # Include default devise modules. Others available are:
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: { :case_sensitive => false }, 
   						format: { with: /\A[a-zA-Z0-9]+\Z/ }, 
-  						exclusion: {:in => ["admin", "root", "test"],:message => "is reserved"},
+  						exclusion: {:in => ["admin", "root", "test", "discover", "view", "find", "search", "list", "all", "post"],:message => "is reserved"},
   						length: {minimum: 3} 
 
   # Virtual attribute for authenticating by either username or email

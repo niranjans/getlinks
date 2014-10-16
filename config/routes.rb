@@ -1,6 +1,9 @@
 Getlinks::Application.routes.draw do
 
-  get '/:id', to: 'users#show'
+  #get '/:id', to: 'users#show'
+
+  resource :users, :path => "/:id", :only => [:show]
+
 
   devise_for :users
   get "welcome/index"
