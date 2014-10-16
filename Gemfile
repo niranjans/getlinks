@@ -43,6 +43,8 @@ gem 'devise'
 
 gem 'figaro'
 
+gem 'friendly_id', '~> 5.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

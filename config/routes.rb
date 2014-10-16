@@ -1,5 +1,6 @@
 Getlinks::Application.routes.draw do
-  get 'users/show'
+
+  get '/:id', to: 'users#show'
 
   devise_for :users
   get "welcome/index"
