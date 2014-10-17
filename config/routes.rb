@@ -2,7 +2,10 @@ Getlinks::Application.routes.draw do
 
   #get '/:id', to: 'users#show'
 
-  resource :users, :path => "/:id", :only => [:show]
+  get "/check_username", to: 'users#check_username'
+
+  resource :user, :path => "/:username", :only => [:show, :edit, :update]
+  
 
 
   devise_for :users

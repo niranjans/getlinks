@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: { :case_sensitive => false }, 
   						format: { with: /\A[a-zA-Z0-9]+\Z/ }, 
-  						exclusion: {:in => ["admin", "root", "test", "discover", "view", "find", "search", "list", "all", "post"],:message => "is reserved"},
+  						exclusion: {:in => ["admin", "root", "test", "discover", "view", "find", "search", "list", "all", "post", "users", "guest", "demo", "show", "index", "profile", "edit", "check", "checkname", "username", "api"],:message => "is reserved"},
   						length: {minimum: 3} 
 
   # Virtual attribute for authenticating by either username or email
