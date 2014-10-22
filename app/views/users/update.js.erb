@@ -1,0 +1,10 @@
+$('#user_info').html("<%= escape_javascript(render 'user_info') %>");
+
+ if ($("#user_name,#user_short_bio").is(":focus")) 
+	{
+	    // One of them still in focus
+	}else{
+		$('#user_info_edit').hide(); 
+	    $('#user_info').show();  
+	}
+

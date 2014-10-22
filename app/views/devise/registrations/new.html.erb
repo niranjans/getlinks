@@ -1,23 +1,46 @@
-<h2>Sign up</h2>
+<div class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-md-offset-1">
+        <h1><%=@title = "Sign up"%></h1>
+        <hr>
+        <div class="form-horizontal" role="form">
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+            <label for="username" class="col-md-2 control-label">Username</label>
+            <div class="col-md-5 col-md-offset-1">
+              <%= f.text_field :username, :class => "form-control", :autofocus => true, :'data-validate' => '/check_username' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-md-2 control-label">Email</label>
+            <div class="col-md-5 col-md-offset-1">
+              <%= f.email_field :email, :class => "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-md-2 control-label">Password</label>
+            <div class="col-md-5 col-md-offset-1">
+              <%= f.password_field :password, :class=>"form-control"%>
+            </div>
+          </div>       
+          
+          <div class="form-group">
+            <div class="col-md-offset-3 col-md-10">
+              <%= f.submit "Sign up", :class => "btn btn-primary" %>
+            </div>
+          </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+          <div class="col-md-offset-3 col-md-10">
+              <%= link_to('Already a member? Login.', new_user_session_path) %>
+          </div>
 
-  <div class="error-username"><p>OH nooo!!! Do not use that!</p></div>
-
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username, :autofocus => true, :'data-validate' => '/check_username', :class => "has-error" %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+          <%end%>
+        </div>      
+      </div>
+    </div><!-- /.row -->
+    <hr>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

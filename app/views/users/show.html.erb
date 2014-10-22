@@ -1,2 +1,21 @@
 <h1>User page</h1>
 <p>User email - <%= @user.email %></p>
+
+<a href="#" id="edit_user_info_link">Edit</a>
+
+
+<%= render 'user_info' %>
+
+<br>
+
+<div id="user_info_edit">
+	<%= form_for(@user, remote: true) do |f| %>
+	 	<p><%= f.text_field :name %></p>
+		<p><%= f.text_field :short_bio %></p>
+		<%= f.submit :id => 'submit_button', :style => 'display: none;' %>
+	<% end %>
+<div>
+
+
+
+<p class="test">this is a test </p>
