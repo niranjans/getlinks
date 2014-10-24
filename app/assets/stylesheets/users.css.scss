@@ -1,3 +1,26 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//colors
+$color_chicago_approx: #585858;
+$color_pink_swan_approx: #b8b8b8;
+
+.name {
+	font-size: 50px;
+	color: $color_chicago_approx;
+}
+
+.hint {
+	font-size: 26px;
+	color: #B8B8B8;
+}
+
+.user-link {
+	font-size: 26px;
+	color: $color_chicago_approx;
+	&:hover {
+		font-size: 26px;
+		color: $color_chicago_approx;
+	}
+}

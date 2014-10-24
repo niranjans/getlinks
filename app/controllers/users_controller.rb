@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
   
   respond_to :html, :js
 
-  before_filter :authenticate_user!, :only => [:update]
+  before_filter :auth_user, :only => [:update]
 
   def show
   	@user = User.friendly.find(params[:username])
+    session[:return_to] ||= request.referer
   end
 
   def update
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
   	@user.update_attributes(user_params)
 	
 	respond_to do |format|
-	    format.html
+	    format.html { redirect_to @user }
 	    format.js
   	end
   end
@@ -30,6 +32,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-  	params.require(:user).permit(:name, :short_bio)
+  	params.require(:user).permit(:name, :short_bio, :avatar)
   end
 end

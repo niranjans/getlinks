@@ -1,4 +1,24 @@
 <div id="user_info">
-	<p><strong><%= @user.name %></strong></p>
-	<p><%= @user.short_bio %></p>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="text-align: center">
+					<br>
+						<%= image_tag(@user.avatar.url, :size=>"300x300", :class=>"img-circle") %>
+						<h1 class="name"><%= @user.name %></h1>
+						<p class="hint"><%= @user.short_bio %></p>
+						<hr width="10%">
+						<p><a class="user-link" href="www.twitter.com">Twitter</a></p>
+						<p><a class="user-link" href="www.github.com">Github</a></p>
+						<p><a class="user-link" href="www.facebook.com">Facebook</a></p>
+						<p><a class="user-link" href="www.facebook.com">Instagram</a></p>
+						<p><a class="user-link" href="www.website.com">Website</a></p>
+						<hr width="10%">
+						<p><a class="user-link" href="www.facebook.com">Blog</a></p>
+						<p><a class="user-link" href="www.website.com">Project: ContactCzar</a></p>						
+					</div>	
+				</div>
+			</div>
+		</div>
 </div>

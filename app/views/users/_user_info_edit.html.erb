@@ -1,0 +1,20 @@
+<div id="user_info_edit">
+	<%= form_for(@user, remote: true, :html => {:method => :put, :multipart => true}) do |f| %>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="text-align: center">
+					<br>
+						<%= f.hidden_field :avatar_cache %>
+						<%= f.file_field :avatar %>
+						<%= image_tag(@user.avatar.url, :size=>"300x300", :class=>"img-circle") %>
+						<h1><%= f.text_field :name, class: "name" %></h1>
+						<p><%= f.text_field :short_bio, class: "hint" %></p>
+						<%= f.submit 'Done', :id => 'submit_button', :class=>"btn btn-primary" %>
+						<hr width="10%">					
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<div>

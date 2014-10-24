@@ -39,13 +39,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Authentication
 gem 'devise'
 
 gem 'figaro'
 
 gem 'friendly_id', '~> 5.0.0'
 
+# Handling file uploads
 gem 'carrierwave'
+gem 'fog'
+
+# submiting file upload through AJAX
+gem 'remotipart', '~> 1.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

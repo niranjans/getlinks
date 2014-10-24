@@ -14,7 +14,7 @@ var ready = function() {
     });
 
     $('#user_name,#user_short_bio').blur(function() {
-       this.form.submit_button.click();
+       //this.form.submit_button.click();
     });
 
     // Swap out user info with edit text boxes
