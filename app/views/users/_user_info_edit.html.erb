@@ -1,18 +1,49 @@
 <div id="user_info_edit">
 	<%= form_for(@user, remote: true, :html => {:method => :put, :multipart => true}) do |f| %>
 		<div class="container-fluid">
+
 			<div class="row">
-				<div class="col-md-12">
-					<div style="text-align: center">
-					<br>
-						<%= f.hidden_field :avatar_cache %>
-						<%= f.file_field :avatar %>
-						<%= image_tag(@user.avatar.url, :size=>"300x300", :class=>"img-circle") %>
-						<h1><%= f.text_field :name, class: "name" %></h1>
-						<p><%= f.text_field :short_bio, class: "hint" %></p>
-						<%= f.submit 'Done', :id => 'submit_button', :class=>"btn btn-primary" %>
-						<hr width="10%">					
-					</div>
+				<div  style="text-align: center">
+					<%= f.file_field :avatar %>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-5	">
+					<%= f.hidden_field :avatar_cache %>
+					<%= image_tag(@user.avatar.url, :size=>"300x300", :class=>"img-circle") %>
+				</div>
+			</div>
+			<div class="row">
+				<div  style="text-align: center">
+					<h1><%= f.text_field :name, class: "name", style: "text-align: center" %></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div style="text-align: center">
+					<p><%= f.text_field :short_bio, class: "hint", style: "text-align: center" %></p>
+				</div>
+			</div>
+			<div class="row">
+				<div style="text-align: center">
+					<p class="username">@<%= @user.username %></p>
+				</div>
+			</div>
+			<div class="row">
+				<div style="text-align: center">
+					<%= f.submit 'Done', :id => 'submit_button', :class=>"btn btn-primary" %>
+				</div>
+			</div>
+			<div class="row">
+				<div style="text-align: center">
+					<hr width="10%">
+					<p><a class="user-link" href="www.twitter.com">Twitter</a></p>
+					<p><a class="user-link" href="www.github.com">Github</a></p>
+					<p><a class="user-link" href="www.facebook.com">Facebook</a></p>
+					<p><a class="user-link" href="www.facebook.com">Instagram</a></p>
+					<p><a class="user-link" href="www.website.com">Website</a></p>
+					<hr width="10%">
+					<p><a class="user-link" href="www.facebook.com">Blog</a></p>
+					<p><a class="user-link" href="www.website.com">Project: ContactCzar</a></p>
 				</div>
 			</div>
 		</div>
