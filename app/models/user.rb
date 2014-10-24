@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	extend FriendlyId
+  has_many :links
   mount_uploader :avatar, AvatarUploader
 	friendly_id :username
 

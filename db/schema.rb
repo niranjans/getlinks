@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016091238) do
+ActiveRecord::Schema.define(version: 20141024090809) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20141016091238) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "links", force: true do |t|
+    t.string   "title"
+    t.text     "url"
+    t.string   "type"
+    t.integer  "position"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["user_id"], name: "index_links_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
