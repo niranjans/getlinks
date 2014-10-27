@@ -3,7 +3,7 @@ class CreateLinks < ActiveRecord::Migration
     create_table :links do |t|
       t.string :title
       t.text :url
-      t.string :type
+      t.string :link_type
       t.integer :position
       t.references :user, index: true
 

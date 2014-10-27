@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141024090809) do
   create_table "links", force: true do |t|
     t.string   "title"
     t.text     "url"
-    t.string   "type"
+    t.string   "link_type"
     t.integer  "position"
     t.integer  "user_id"
     t.datetime "created_at"

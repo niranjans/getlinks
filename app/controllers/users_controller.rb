@@ -7,13 +7,15 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.friendly.find(params[:username])
+    @links = @user.links
     session[:return_to] ||= request.referer
   end
 
   def update
   	@user = User.friendly.find(params[:username])
   	@user.update_attributes(user_params)
-	
+	  @links = @user.links
+    
 	respond_to do |format|
 	    format.html { redirect_to @user }
 	    format.js

@@ -16,4 +16,4 @@
 //= require turbolinks
 //= require_tree .
 //= require custom.js
-//= require jquery-ui
+//= require jquery.ui.all
