@@ -21,12 +21,23 @@ var ready = function() {
        //alert("blur");
        //this.form.link-submit-button.click();
     });
-/*
-Later - for updating links without clicking save button
-    $('#link_title,#link_url').on('blur', function() {
-      alert("blur");
+
+    $(document).on('change',".divider-checkbox", function() {
+        
+        // $("#newLinkDivider").toggle(this.checked);
+
+        if(this.checked) {
+           $("#newLinkDivider").show();
+           $("#link_title").hide();
+           $("#link_url").hide();
+        } else {
+           $("#newLinkDivider").hide();
+           $("#link_title").show();
+           $("#link_url").show();  
+        }
+          
     });
-*/
+
     // Swap out user info with edit text boxes
     $('#edit_user_info_link').click(function(){ editUserInfo(); return false; });
 
