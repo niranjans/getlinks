@@ -1,6 +1,10 @@
-<div id="user-links" style="text-align: center">
+<div style="text-align: center">
 	<hr width="10%">
 	<% links.each do |link| %>
-		<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
+		<% if link.link_type == "normal" %>
+			<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
+		<% else %>
+			<hr width="10%">
+		<% end %>
 	<% end %>
 </div>

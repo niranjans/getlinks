@@ -1,5 +1,6 @@
-<%= form_for :link, remote: true, :url => {controller: "links", action: "create", html: {method: :post}} do |f_link| %>
-	<%= f_link.text_field :title %>
-	<%= f_link.text_field :url %>
-	<%= f_link.submit 'Save', :class=>"btn btn-primary" %>
+<%= form_for :link, remote: true, :url => {controller: "links", action: "create", html: {method: :post}} do |f| %>
+	<%= f.check_box :link_type, {}, "divider", "normal" %> Divider
+	<%= f.text_field :title, placeholder: "Title" %>
+	<%= f.text_field :url, placeholder: "URL" %>
+	<%= f.submit 'Save', id: "link-submit-button", :class=>"btn btn-primary" %>
 <% end %>

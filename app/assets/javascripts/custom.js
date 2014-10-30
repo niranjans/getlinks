@@ -17,6 +17,16 @@ var ready = function() {
        //this.form.submit_button.click();
     });
 
+    $('#link_title,#link_url').blur(function() {
+       //alert("blur");
+       //this.form.link-submit-button.click();
+    });
+/*
+Later - for updating links without clicking save button
+    $('#link_title,#link_url').on('blur', function() {
+      alert("blur");
+    });
+*/
     // Swap out user info with edit text boxes
     $('#edit_user_info_link').click(function(){ editUserInfo(); return false; });
 

@@ -9,6 +9,7 @@ class LinksController < ApplicationController
   	@link = Link.new(link_params)
   	@link.user = current_user
   	@link.save
+    @links = current_user.links
   end
 
   def edit
@@ -17,7 +18,7 @@ class LinksController < ApplicationController
     private
 
     def link_params
-      params.require(:link).permit(:title, :url)
+      params.require(:link).permit(:title, :url, :link_type)
     end
 
 end
