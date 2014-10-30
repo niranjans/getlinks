@@ -1,10 +1,20 @@
 <div style="text-align: center">
 	<hr width="10%">
 	<% links.each do |link| %>
-		<% if link.link_type == "normal" %>
-			<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
-		<% else %>
-			<hr width="10%">
-		<% end %>
+		<div data-link="<%= link.id %>">
+			<div class="col-md-10 col-md-offset-1">
+				<% if link.link_type == "normal" %>
+					<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
+				<% else %>
+					<hr width="10%">
+				<% end %>
+			</div>
+
+			<div class="col-md-1">
+				<%= link_to 'delete Link', user_links_path(id: link.id), method: :delete, id: "delete-link" + link.id.to_s, style: "display:none;", remote: true if isInEditMode == true %>
+			</div>
+		</div>
+
+
 	<% end %>
 </div>

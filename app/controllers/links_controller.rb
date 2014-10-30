@@ -14,6 +14,11 @@ class LinksController < ApplicationController
 
   def edit
   end
+
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+  end
     
     private
 

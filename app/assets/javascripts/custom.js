@@ -1,5 +1,7 @@
 var ready = function() {
 
+    // TO-DO handle hover events for touch screens - http://www.prowebdesign.ro/how-to-deal-with-hover-on-touch-screen-devices/    -- http://stackoverflow.com/questions/20818863/handling-hover-events-on-a-touch-screen
+
     $(".error-username").hide();
 
     $('[data-validate]').blur(function() {
@@ -22,10 +24,20 @@ var ready = function() {
        //this.form.link-submit-button.click();
     });
 
-    $(document).on('change',".divider-checkbox", function() {
-        
-        // $("#newLinkDivider").toggle(this.checked);
+    // Show delete link on hover
+    $(document).on('mouseenter',"div[data-link]", function() {
+        //  HoverIn
+        var idNumber = $(this).data("link");
+        $('#delete-link'+idNumber).fadeIn(50);
+    }).on('mouseleave',"div[data-link]", function() {
+        // HoverOut
+        var idNumber = $(this).data("link");
+        $('#delete-link'+idNumber).fadeOut(50);
+    });
 
+    // Divider checkbox => toggle hr or text boxes
+    $(document).on('change',".divider-checkbox", function() {
+        // $("#newLinkDivider").toggle(this.checked);
         if(this.checked) {
            $("#newLinkDivider").show();
            $("#link_title").hide();

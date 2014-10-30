@@ -1,4 +1,4 @@
-<div id="user_info_edit">
+<div id="user_info_edit" style="display:none;">
 	<%= form_for(user, remote: true, :html => {:method => :put, :multipart => true}) do |f| %>
 		<div class="container-fluid">
 
@@ -35,7 +35,7 @@
 			</div>
 		<% end %>
 			<div class="row" id="user-links">
-				<%= render partial: 'links/all_links', locals: { links: links } %>
+				<%= render partial: 'links/all_links', locals: { links: links, isInEditMode: true } %>
 			</div>
 		</div>
 
