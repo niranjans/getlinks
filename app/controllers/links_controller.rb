@@ -17,6 +17,7 @@ class LinksController < ApplicationController
 
   def destroy
     @link = Link.find(params[:id])
+    @deletedLinkId = @link.id
     @link.destroy
   end
     

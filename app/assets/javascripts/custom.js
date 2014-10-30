@@ -50,6 +50,7 @@ var ready = function() {
           
     });
 
+
     // Swap out user info with edit text boxes
     $('#edit_user_info_link').click(function(){ editUserInfo(); return false; });
 

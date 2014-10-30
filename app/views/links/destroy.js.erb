@@ -1,0 +1,7 @@
+// Remove the deleted row from page
+$('div[data-link]').each( function(){
+    if ($(this).data("link") == <%= @deletedLinkId %>) {
+        $(this).fadeOut(150);
+    }
+});
+

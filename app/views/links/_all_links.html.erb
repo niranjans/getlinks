@@ -11,7 +11,11 @@
 			</div>
 
 			<div class="col-md-1">
-				<%= link_to 'delete Link', user_links_path(id: link.id), method: :delete, id: "delete-link" + link.id.to_s, style: "display:none;", remote: true if isInEditMode == true %>
+				<% if isInEditMode == true %>
+					<%= link_to user_links_path(id: link.id), method: :delete, id: "delete-link" + link.id.to_s, style: "display:none;", remote: true do %>
+						<i class="fa fa-trash-o fa-2x"></i>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
 
