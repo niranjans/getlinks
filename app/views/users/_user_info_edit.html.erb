@@ -33,15 +33,24 @@
 					<%= f.submit 'Done', :id => 'submit_button', :class=>"btn btn-primary" %>
 				</div>
 			</div>
+		<% end %>
 			<div class="row">
-				<div id="user-links" style="text-align: center">
-					<hr width="10%">
-					<% links.each do |link| %>
-						<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
-					<% end %>
+				<%= render partial: 'links/all_links', locals: { links: links } %>
+			</div>
+		</div>
 
+		<div class="container-fluid">
+			<div class="row">
+					<div style="text-align: center">
+						<div id="link-form" style="display:none;"></div>
+					</div>
+			</div>
+			
+			<div class="row">
+				<div style="text-align: center">
+					<%= link_to 'New Link', new_user_links_path, remote: true %>
 				</div>
 			</div>
 		</div>
-	<% end %>
 <div>
+

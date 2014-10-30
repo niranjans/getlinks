@@ -1,11 +1,10 @@
 Getlinks::Application.routes.draw do
-
   #get '/:id', to: 'users#show'
 
   get "/check_username", to: 'users#check_username'
 
   resource :user, :path => "/:username", :only => [:show, :edit, :update] do
-    resource :links, only: [:new, :edit]
+    resource :links, only: [:new, :create, :edit, :update]
   end
   
 

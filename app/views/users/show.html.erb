@@ -2,11 +2,8 @@
 
 <a href="#" id="edit_user_info_link">Edit</a>
 
-<%= render 'user_info', user: @user, links: @links %>
+<%= render partial: 'user_info', :locals => { user: @user, links: @links }  %>
 
-<%= render 'user_info_edit', user: @user, links: @links %>
-
-<br>
-<p class="test">this is a test </p>
+<%= render partial: 'user_info_edit', :locals => { user: @user, links: @links } %>
 
 

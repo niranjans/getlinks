@@ -1,0 +1,5 @@
+<%= form_for :link, remote: true, :url => {controller: "links", action: "create", html: {method: :post}} do |f_link| %>
+	<%= f_link.text_field :title %>
+	<%= f_link.text_field :url %>
+	<%= f_link.submit 'Save', :class=>"btn btn-primary" %>
+<% end %>

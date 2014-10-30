@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.friendly.find(params[:username])
     @links = @user.links
+    @new_link = Link.new
     session[:return_to] ||= request.referer
   end
 
