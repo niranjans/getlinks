@@ -1,14 +1,23 @@
 <%= form_for :link, remote: true, :url => {controller: "links", action: "create", html: {method: :post}} do |f| %>
-	<div class="col-md-1  col-md-offset-2">
+	<div class="col-md-1  col-md-offset-3">
 		<%= f.check_box :link_type, {class: "divider-checkbox"}, "divider", "normal" %> Divider
 	</div>
 	
-	<div class="col-md-6">
-			<%= f.text_field :title, placeholder: "Title" %>
-			<%= f.text_field :url, placeholder: "URL" %>
-			<div id="newLinkDivider" style="display:none"><hr width="20%"></div>​
+	<div class="col-md-2" id="link-title-div">
+			<%= f.text_field :title, placeholder: "Title", class: "form-control" %>
 	</div>
 
+	<div class="col-md-2" id="link-url-div">
+			<%= f.text_field :url, placeholder: "URL", class: "form-control" %>
+	</div>			
+			
+	<div id="newLinkDivider" style="display:none" class="col-md-2 col-md-offset-1">
+		<hr width="150px">
+	</div>​
 
-	<%= f.submit 'Save', id: "link-submit-button", :class=>"btn btn-primary" %>
+
+	<div class="col-md-1">
+			<%= f.submit 'Save', id: "link-submit-button", :class=>"btn btn-primary" %>
+	</div>	
+	
 <% end %>

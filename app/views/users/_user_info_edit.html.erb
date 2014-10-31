@@ -48,7 +48,10 @@
 			
 			<div class="row">
 				<div style="text-align: center">
-					<%= link_to 'New Link', new_user_links_path, remote: true %>
+					<%= link_to new_user_links_path, class: "fa-stack fa-lg link-to-add-new-link", remote: true do %>
+						<i class="fa fa-circle-thin fa-stack-2x"></i>
+						<i class="fa fa-plus fa-stack-1x"></i>
+					<% end %>
 				</div>
 			</div>
 		</div>

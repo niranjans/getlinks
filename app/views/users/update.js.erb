@@ -1,5 +1,5 @@
-$('#user_info').html("<%= escape_javascript(render 'user_info', user: @user, links: @links) %>");
-$('#user_info_edit').html("<%= escape_javascript(render 'user_info_edit', user: @user, links: @links) %>");
+$('#user_info').replaceWith("<%= escape_javascript(render partial: 'user_info', :locals => { user: @user, links: @links }) %>");
+$('#user_info_edit').replaceWith("<%= escape_javascript(render  partial: 'user_info_edit', :locals => { user: @user, links: @links }) %>");
 
 
 $('#user_info_edit').hide(); 

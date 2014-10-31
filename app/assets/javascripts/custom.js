@@ -40,12 +40,12 @@ var ready = function() {
         // $("#newLinkDivider").toggle(this.checked);
         if(this.checked) {
            $("#newLinkDivider").show();
-           $("#link_title").hide();
-           $("#link_url").hide();
+           $("#link-title-div").hide();
+           $("#link-url-div").hide();
         } else {
            $("#newLinkDivider").hide();
-           $("#link_title").show();
-           $("#link_url").show();  
+           $("#link-title-div").show();
+           $("#link-url-div").show();  
         }
           
     });
@@ -55,7 +55,6 @@ var ready = function() {
     $('#edit_user_info_link').click(function(){ editUserInfo(); return false; });
 
     function editUserInfo() {
-        //$('.user_info').empty().append($('.user_info_edit'));
         $('#user_info').hide();  
         $('#user_info_edit').show();  
 

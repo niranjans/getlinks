@@ -7,9 +7,9 @@ class LinksController < ApplicationController
 
   def create
   	@link = Link.new(link_params)
-  	@link.user = current_user
+  	@link.user = User.friendly.find(params[:username])
   	@link.save
-    @links = current_user.links
+    @links = @link.user.links
   end
 
   def edit
