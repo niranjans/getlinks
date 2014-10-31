@@ -68,6 +68,8 @@ var ready = function() {
     };
 
     showUserInfo();
+
+     $('#user-links').sortable();
 };
 
 

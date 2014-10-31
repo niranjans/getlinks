@@ -1,2 +1,2 @@
 $('#link-form').fadeOut(150);
-$('#user-links').html("<%= j (render partial: 'links/all_links', locals: { links: @links, isInEditMode: true }) %>");
+$('#user-links').html("<%= j (render partial: 'links/all_links_edit', locals: { links: @links }) %>");

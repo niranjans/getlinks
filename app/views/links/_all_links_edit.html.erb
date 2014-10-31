@@ -1,6 +1,7 @@
 <div style="text-align: center">
 	<hr width="150px">
 	<% links.each do |link| %>
+		<div data-link="<%= link.id %>" id="link_<%= link.id %>">
 			<div class="col-md-4 col-md-offset-4">
 				<% if link.link_type == "normal" %>
 					<p><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
@@ -8,5 +9,14 @@
 					<hr width="150px">
 				<% end %>
 			</div>
+
+			<div class="col-md-1">
+					<%= link_to user_links_path(id: link.id), method: :delete, id: "delete-link" + link.id.to_s, style: "display:none;", remote: true do %>
+						<i class="fa fa-trash-o fa-2x"></i>
+					<% end %>
+			</div>
+		</div>
+
+
 	<% end %>
 </div>
