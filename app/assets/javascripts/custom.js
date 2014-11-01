@@ -69,7 +69,16 @@ var ready = function() {
 
     showUserInfo();
 
-     $('#user-links').sortable();
+    // Sorting links
+     $('#user-links').sortable({
+        axis: 'y', 
+        handle: '.handle',
+        update: function(event, ui){
+            $.post($(this).data('update-url'), $(this).sortable('serialize'));
+        }
+    });
+
+
 };
 
 

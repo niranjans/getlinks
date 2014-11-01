@@ -1,2 +1,2 @@
 $('#link-form').fadeOut(150);
-$('#user-links').html("<%= j (render partial: 'links/all_links_edit', locals: { links: @links }) %>");
+$('#user-links').replaceWith("<%= j (render partial: 'links/all_links_edit', locals: { links: @links }) %>");
