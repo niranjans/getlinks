@@ -55,6 +55,9 @@ gem 'fog'
 # submiting file upload through AJAX
 gem 'remotipart', '~> 1.2'
 
+# To handle links positions
+gem 'acts_as_list'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -14,6 +14,7 @@ class LinksController < ApplicationController
   	@link = Link.new(link_params)
   	@link.user = User.friendly.find(params[:username])
   	@link.save
+    #@link.move_to_bottom
     @links = @link.user.links.order("position")
   end
 
@@ -23,7 +24,7 @@ class LinksController < ApplicationController
   def destroy
     @link = Link.find(params[:id])
     @deletedLinkId = @link.id
-    @link.destroy
+    @link.remove_from_list if @link
   end
 
   def sort

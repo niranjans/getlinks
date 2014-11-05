@@ -15,6 +15,10 @@ var ready = function() {
         });
     });
 
+    // -----------------------------------------------------------------------------------------
+    // User page
+    // -----------------------------------------------------------------------------------------
+
     $('#user_name,#user_short_bio').blur(function() {
        //this.form.submit_button.click();
     });
@@ -69,6 +73,11 @@ var ready = function() {
 
     showUserInfo();
 
+    sortableList();
+
+};
+
+function sortableList() {
     // Sorting links
      $('#user-links').sortable({
         axis: 'y', 
@@ -78,9 +87,7 @@ var ready = function() {
         }
     });
 
-
 };
-
 
 // Make the javascript load with turbolinks. Works with regular page loads and turbolinks (http://stackoverflow.com/a/17600195/804503)
 $(document).ready(ready);

@@ -1,2 +1,5 @@
 $('#link-form').fadeOut(150);
 $('#user-links').replaceWith("<%= j (render partial: 'links/all_links_edit', locals: { links: @links }) %>");
+
+// Call sortable function to make the re rendered list sortable again.
+sortableList();
