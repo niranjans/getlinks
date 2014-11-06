@@ -1,12 +1,12 @@
 <div style="text-align: center"  id="user-links" data-update-url="<%= sort_user_links_url %>">
-	<hr width="150px">
+	<span class="horizontal-line"><%= image_tag "line.png" %></span>
 	<% links.each do |link| %>
 		<div data-link="<%= link.id %>" id="link_<%= link.id %>" class="row test-class">
 			<div class="col-md-4 col-md-offset-4">
 				<% if link.link_type == "normal" %>
-					<p><span class="handle">handle</span><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
+					<p><span class="handle"><%= image_tag "draggable.png" %></span></span><%= link_to link.title.capitalize, link.url, class: "user-link" %></p>
 				<% else %>
-					<span class="handle">handle</span><hr width="150px">
+					<p><span class="handle"><%= image_tag "draggable.png" %></span><span class="horizontal-line"><%= image_tag "line.png" %></span></p>
 				<% end %>
 			</div>
 

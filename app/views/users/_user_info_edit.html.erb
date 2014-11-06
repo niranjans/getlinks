@@ -3,6 +3,12 @@
 		<div class="container-fluid">
 
 			<div class="row">
+				<div class="col-md-2 col-md-offset-7">
+					<%= f.submit 'Done editing', :id => 'submit_button', :class=>"btn btn-primary" %>
+				</div>
+			</div>
+
+			<div class="row">
 				<div  style="text-align: center">
 					<%= f.file_field :avatar %>
 				</div>
@@ -28,11 +34,7 @@
 					<p class="username">@<%= user.username %></p>
 				</div>
 			</div>
-			<div class="row">
-				<div style="text-align: center">
-					<%= f.submit 'Done', :id => 'submit_button', :class=>"btn btn-primary" %>
-				</div>
-			</div>
+
 		<% end %>
 			<div class="row">
 				<%= render partial: 'links/all_links_edit', locals: { links: links } %>
